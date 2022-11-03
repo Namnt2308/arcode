@@ -21,13 +21,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("./public"));
 app.set('views', path.join(__dirname, 'views'));
 
-
 mongoose.connect('mongodb://0.0.0.0:27017/test?directConnection=true').then(function(){
     console.log("Connected to DB");
 }).catch(function(err){  
     console.log("Error connecting to DB", err);
 });
-
 var TextDataSchema = new Schema({
    content:String, 
    view:Number,  
